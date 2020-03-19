@@ -4,7 +4,7 @@ tell application "Google Chrome"
     repeat with w in (windows) -- loop over each window
         set j to 1 -- tabs are not zeroeth
         repeat with t in (tabs of w) -- loop over each tab
-            if title of t contains "Meet - " then
+            if title of t starts with "Meet " then
                 set (active tab index of w) to j -- set Meet tab to active
                 set index of w to 1 -- set window with Meet tab to active
                 delay 0.5
